@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="232.0" prefWidth="332.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UIController">
+   <children>
+      <AnchorPane>
+         <children>
+            <Label alignment="CENTER" text="URL Shortener" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <effect>
+                  <Glow level="0.36" />
+               </effect>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane VBox.vgrow="ALWAYS">
+         <children>
+            <Accordion fx:id="accordion" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <panes>
+                <TitledPane fx:id="accordionPageOne" text="Create short URL">
+                  <content>
+                        <VBox>
+                           <children>
+                          <AnchorPane>
+                                 <children>
+                                    <Label text="Enter a long URL" />
+                                 </children>
+                              </AnchorPane>
+                              <TextField fx:id="textFieldCreate" promptText="Enter URL here">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <AnchorPane>
+                                 <children>
+                                    <Button fx:id="buttonCreate" mnemonicParsing="false" onAction="#generateShortURL" text="Generate short URL" textAlignment="CENTER" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="accordionPageTwo" text="Lookup short URL">
+                  <content>
+                        <VBox>
+                           <children>
+                              <AnchorPane>
+                                 <children>
+                                    <Label text="Enter a shortened URL" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                              <TextField fx:id="textFieldGet" promptText="Enter URL here">
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <AnchorPane>
+                                 <children>
+                                    <Button fx:id="buttonGet" mnemonicParsing="false" onAction="#generateLongURL" text="Get long URL" textAlignment="CENTER" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
